@@ -3,10 +3,10 @@
     <!-- Heading and subheading -->
     <div class="space-y-8">
       <h1 class="font-semibold tracking-tight text-4xl lg:text-6xl text-blue-800">
-        {{ i18n "hero_title" | default "Example Heading Here" }}
+        {{ i18n "hero_title" | default "N/A" }}
       </h1>
       <p class="text-muted-foreground md:text-lg">
-        {{ i18n "hero_subtitle" | default "Example Subheading here" }}
+        {{ i18n "hero_subtitle" | default "N/A" }}
       </p>
     </div>
     
@@ -14,11 +14,11 @@
     <div class="mt-6 flex max-md:flex-col md:gap-x-4 max-md:gap-y-4 justify-center">
       <a href="{{ "/docs/" | relLangURL }}"
         class="px-6 py-3 border-2 border-blue-800 text-blue-800 rounded-lg hover:bg-blue-800 hover:text-white transition-all duration-300" aria-label="View documentation">
-        {{ i18n "view_docs" | default "Learn For Free" }}
+        {{ i18n "view_services" | default "N/A" }}
       </a>
       <a href="https://tally.so/" target="_blank"
         class="px-6 py-3 bg-orange-800 text-white rounded-lg hover:bg-orange-900 transition-all pulse" aria-label="Get started, contact us">
-        {{ i18n "get_started" | default "Let's Talk Free, No Commitment" }}
+        {{ i18n "get_started" | default "N/A" }}
       </a>
     </div>
   </section>
@@ -63,10 +63,10 @@
   <section id="solutions" class="max-w-5xl mx-auto my-24 lg:my-28">
         <div class="text-center">
           <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-blue-800">
-            Sound familiar? You're not alone.
+            {{ i18n "solutions_title" | default "N/A" }}
           </h2>
           <p class="mt-4 text-lg  ">
-            We get it, inefficiency stings. Let's cut through the noise and get you back in control.
+            {{ i18n "solutions_subtitle" | default "N/A" }}
           </p>
         </div>
         
@@ -137,10 +137,10 @@
   <section id="success-stories" class="max-w-5xl mx-auto my-24 lg:my-28">
       <div class="text-center">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-blue-800">
-            Feel like you're stuck? They were too.
+          {{ i18n "stories_title" | default "N/A" }}
         </h2>
         <p class="mt-4 text-lg  ">
-            What if your breakthrough was just one step away?
+          {{ i18n "stories_subtitle" | default "N/A" }}
         </p>
       </div>
       
@@ -252,10 +252,10 @@
 
   <section id="clients" class="text-center mb-24 mt-12 lg:mb-28 lg:mt-16">
     <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-blue-800">
-      Trusted by Leading Companies
+      {{ i18n "clients_title" | default "N/A" }}
     </h2>
     <p class="mt-4 text-lg">
-      We've partnered with industry leaders to drive transformation and results.
+      {{ i18n "clients_subtitle" | default "N/A" }}
     </p>
     <div class="mt-4 mx-auto overflow-hidden relative w-full max-w-[720px]">
       <div class="w-full flex animate-infinite-scroll">
@@ -292,10 +292,10 @@
   <section id="our-process" class="pb-24 px-6">
     <div class="max-w-4xl mx-auto text-center">
         <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-blue-800">
-          How does a clear path forward sound?
+          {{ i18n "method_title" | default "N/A" }}
         </h2>
         <p class="mt-4 text-lg">
-          After 15 years turning chaos into clarity for companies like yours, we know how to cut through the noise. 
+          {{ i18n "method_subtitle" | default "N/A" }} 
         </p>
         <div class="mt-12 flex flex-col items-center space-y-6">
           <div class="mr-8 md:mr-24 relative p-6 glass ring-1 dark:ring-blue-700/50 ring-blue-700/50 rounded-lg ">
@@ -348,84 +348,10 @@
     </div>
   </section>
 
-  <section id="pricing" class="section-generic py-16 px-4">
-    <div class="max-w-7xl mx-auto text-center mb-12">
-      <h2 class="text-4xl font-medium text-blue-800">Pricing That Works for You</h2>
-      <p class="mt-4 text-lg">No pressure. No hidden fees. Just a plan that grows with you.</p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-
-      <!-- Hobby Plan -->
-      <div class="relative rounded-2xl shadow-lg transform hover:scale-105 transition p-6">
-        <div class="text-center mb-6">
-          <div class="text-lg font-semibold">Hobby</div>
-          <div class="mt-2 text-4xl font-extrabold">
-            $0<span class="text-base font-medium">/month</span>
-          </div>
-          <div class="mt-1 text-sm">For individual hobbyists</div>
-        </div>
-        <a href="{{ "/learn/" | relLangURL }}" class="block text-center border border-blue-800 text-blue-800 font-semibold rounded-lg py-3 hover:bg-blue-800 hover:text-white transition">Learn For Free</a>
-        <ul class="space-y-4 mt-6">
-          <!-- Features... -->
-        </ul>
-      </div>
-
-      <!-- Pro Plan with dynamic price update -->
-      <div x-data="{ editors: 5, pricePerEditor: 30 }" class="relative rounded-2xl shadow-lg transform hover:scale-105 transition p-6">
-        <div class="absolute -mt-4 right-6">
-          <span class="bg-orange-800 text-white uppercase text-xs font-semibold px-3 py-1 rounded-b-full">Popular</span>
-        </div>
-        <div class="text-center mb-6">
-          <div class="text-lg font-semibold">Pro</div>
-          <div class="mt-2 text-4xl font-extrabold">
-            $<span x-text="editors * pricePerEditor"></span><span class="text-base font-medium">/month</span>
-          </div>
-          <div class="mt-1 text-sm">For small teams and startups</div>
-        </div>
-        <a href="#" class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg py-3 transition">Get Started</a>
-        <ul class="space-y-4 mt-6">
-          <li class="flex items-center space-x-3">
-            <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
-            </svg>
-            <span class="text-sm">Everything in Hobby, plus</span>
-          </li>
-          <li class="flex items-center space-x-3">
-            <label for="editors" class="sr-only">Number of editors</label>
-            <select id="editors" x-model="editors"
-                    class="w-16 text-sm border border-gray-600 rounded focus:outline-none px-2 py-1 appearance-none">
-              <option value="5">5</option>
-              <option value="10">10</option>
-              <option value="15">15</option>
-            </select>
-            <span class="text-sm">editors</span>
-          </li>
-          <!-- Other features... -->
-        </ul>
-        
-      </div>
-
-      <!-- Enterprise Plan -->
-      <div class="relative rounded-2xl shadow-lg transform hover:scale-105 transition p-6">
-        <div class="text-center mb-6">
-          <div class="text-lg font-semibold">Enterprise</div>
-          <div class="mt-2 text-4xl font-extrabold">Custom Pricing</div>
-          <div class="mt-1 text-sm">For large organizations</div>
-        </div>
-        <a href="https://cal.com" target="_blank" class="block text-center border border-blue-800 text-blue-800 font-semibold rounded-lg py-3 hover:bg-blue-800 hover:text-white transition">Let's Talk</a>
-        <ul class="space-y-4 mt-6">
-          <!-- Features... -->
-        </ul>
-      </div>
-
-    </div>
-  </section>
-
   <section id="faqs" class="max-w-2xl mx-auto my-24 lg:my-28">
     <div class="max-w-7xl mx-auto text-center mb-12">
-      <h2 class="text-4xl font-medium text-blue-800">Got Questions? We Hear You.</h2>
-      <p class="mt-4 text-lg">You're not alone in feeling stuck or unsure, let's tackle your biggest concerns together.</p>
+      <h2 class="text-4xl font-medium text-blue-800">{{ i18n "faq_title" | default "N/A" }}</h2>
+      <p class="mt-4 text-lg">{{ i18n "faq_subtitle" | default "N/A" }}</p>
     </div>
     <dl class="space-y-6" x-data="faqAccordion">
       
@@ -481,11 +407,11 @@
 
   <section id="contact" class="py-20">
     <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-blue-800">{{ i18n "cta_heading" | default "Ready to stop guessing and start winning?" }}</h2>
-        <p class="text-xl mt-4 mb-10">{{ i18n "cta_subheading" | default "We hear you, it’s overwhelming. How about we figure this out in 15 minutes, no pressure?" }}</p>
+        <h2 class="text-3xl md:text-4xl font-medium tracking-tight text-blue-800">{{ i18n "contact_title" | default "N/A" }}</h2>
+        <p class="text-xl mt-4 mb-10">{{ i18n "contact_subtitle" | default "N/A" }}</p>
         <a href="https://tally.so/" target="_blank"
         class="px-6 py-3 bg-orange-800 text-white rounded-lg hover:bg-orange-900 transition-all pulse" aria-label="Get started, contact us">
-          {{ i18n "get_started" | default "Let's Talk Free, No Commitment" }}
+          {{ i18n "get_started" | default "N/A" }}
         </a>
     </div>
   </section>
@@ -494,16 +420,13 @@
  {{- $copyright := (T "copyright") | default "© 2024 My Site." -}}
 <footer class="flex items-center gap-x-3 p-4 lg:p-6 text-xs text-muted-foreground">
   <span><a class="hover:text-primary" href="/about">{{ $copyright }}</a></span>
-  <a class="hover:text-primary" href="/terms">Terms</a>
-  <a class="hover:text-primary" href="/privacy">Privacy</a>
-  <a class="ml-auto hover:text-primary" href="https://github.com/" target="_blank">
-    <svg fill="currentColor" class="h-4 w-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"></path></svg>
-  </a>
-  <a class="hover:text-primary" href="https://discord.com" target="_blank">
-    <svg fill="currentColor" class="h-4 w-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Discord</title><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"></path></svg>
-  </a>
-  <a class="hover:text-primary" href="https://x.com/" target="_blank">
-    <svg class="h-4 w-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor"><title>X</title><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"></path></svg>
+  <a class="hover:text-primary" href="/terms">{{ i18n "terms" | default "N/A" }}</a>
+  <a class="hover:text-primary" href="/privacy">{{ i18n "privacy" | default "N/A" }}</a>
+  <a class="ml-auto hover:text-primary" href="https://www.linkedin.com/company/bpc-consultoria-aumenta-ebitda/" target="_blank">
+    <svg fill="currentColor" class="h-4 w-4" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <title>LinkedIn</title>
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
   </a>
   {{- if hugo.IsMultilingual -}}
     {{- partial "language-switch.html" (dict "context" .) -}}
