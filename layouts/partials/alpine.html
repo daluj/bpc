@@ -1,0 +1,17 @@
+{{ $mainjs := resources.Get "js/alpine.js" | js.Build }}
+<script src="{{ $mainjs.RelPermalink }}" defer></script>
+<script>
+  document.addEventListener('alpine:init', () => {
+    Alpine.data('faqAccordion', () => ({
+      openItem: null,
+      
+      toggle(index) {
+        this.openItem = this.openItem === index ? null : index;
+      },
+      
+      isOpen(index) {
+        return this.openItem === index;
+      }
+    }));
+  });
+</script>
