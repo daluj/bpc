@@ -29,6 +29,7 @@ module.exports = {
             },
             animation: {
                 'infinite-scroll': 'infinite-scroll 25s linear infinite',
+                'infinite-scroll-paused': 'none',
             },
             keyframes: {
                 'infinite-scroll': {
